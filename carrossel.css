@@ -1,0 +1,56 @@
+.carrossel {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.carrossel__stage {
+    position: absolute;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    transition: margin-left .3s;
+}
+
+.carrossel__stage li {
+    display: flex;
+    flex-direction: row;
+}
+
+.carrossel button {
+    position: absolute;
+    top: 50%;
+}
+
+.btnPrev {
+    left: 5px;
+}
+
+.btnNext {
+    right: 5px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.dots .dot {
+    display: inline-block;
+    text-indent: -9999em;
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    margin: 0 2px;
+
+}
+
+.dots .dot.on {
+    background-color: red;
+}
