@@ -1,10 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.carrossel_wrap {
+    background: #F0F0F0 url('bg.png') no-repeat right bottom;
+    background-size: 25% auto;
+    position: relative;    
+}
+
+h1 {
+    font: Bold 48px/58px Montserrat;    
+    color: #6F6F6F;
+    margin: 20px;
+}
+
 .carrossel {
-    width: 100%;
+    width: 1100px;
     height: 400px;
     overflow: hidden;
     position: relative;
     padding: 0;
     margin: 0;
+    margin: 0 auto;
+    font: normal 12px/1 'Montserrat';
 }
 
 .carrossel__stage {
@@ -20,37 +39,115 @@
 .carrossel__stage li {
     display: flex;
     flex-direction: row;
+    padding: 0 50px;;
 }
 
-.carrossel button {
+.carrossel__stage li .img {
+    width: 400px;
+    height: 250px;
+}
+
+.carrossel__stage li .img img {
+    width: 400px;
+    max-height: 250px;
+}
+
+.carrossel__stage li .content {
+    padding: 0 20px;
+    width: 600px;
+}
+
+.carrossel__stage li h3 {
+    text-align: left;
+    font: Bold 24px/29px 'Montserrat';
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.carrossel__stage li h3 a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.carrossel__stage li p.maintext {
+    font-size: 13px;
+    line-height: 24px;
+    width: 100%;
+    color: #2C2C2C;
+}
+
+.carrossel__stage li .category {
+    display: inline-block;
+    background-color: #FEC40B;
+    font: Bold 12px/15px Montserrat;
+    margin-bottom: 10px;
+    color: #333333;
+    text-transform: uppercase;
+    padding: 4px 8px;
+}
+
+.carrossel__stage li .type {
+    font: Medium Italic 12px/15px Montserrat;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.carrossel_wrap button {
     position: absolute;
     top: 50%;
+    left: 50%;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    background-color: #fff;
+    color: #FEC40B;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 0;
+    border-radius: 100%;
 }
 
 .btnPrev {
-    left: 5px;
+    transform: translate(-580px, -50%);
+}
+
+.btnPrev::after {
+    content: '<';
+    font-size: 24px;
+    font: Solid 24px/29px Font Awesome 5 Free;
 }
 
 .btnNext {
-    right: 5px;
+    transform: translate(580px, -50%);    
+}
+
+.btnNext::after {
+    content: '>';
+    font-size: 24px;
+    font: Solid 24px/29px Font Awesome 5 Free;
 }
 
 .dots {
     position: absolute;
     bottom: 0;
     left: 50%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;    
+    padding: 10px;
+
 }
 .dots .dot {
     display: inline-block;
     text-indent: -9999em;
     border-radius: 100%;
-    width: 10px;
-    height: 10px;
-    background-color: yellow;
+    width: 20px;
+    height: 20px;
+    background: #FFEAA5 0% 0% no-repeat padding-box;
     margin: 0 2px;
 
 }
 
 .dots .dot.on {
-    background-color: red;
+    background: #FEC40B 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
 }

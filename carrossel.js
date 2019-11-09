@@ -48,21 +48,21 @@ function carrrossel () {
     let prevBtn = document.createElement('button');
     let prevTxt = document.createTextNode('Anterior');
 
-    nextBtn.appendChild(nextTxt);
-    prevBtn.appendChild(prevTxt);
+    // nextBtn.appendChild(nextTxt);
+    // prevBtn.appendChild(prevTxt);
 
     nextBtn.classList.add('btnNext');
     prevBtn.classList.add('btnPrev');
 
-    document.querySelector('.carrossel').appendChild(nextBtn);
-    document.querySelector('.carrossel').appendChild(prevBtn);
+    document.querySelector('.carrossel_wrap').appendChild(nextBtn);
+    document.querySelector('.carrossel_wrap').appendChild(prevBtn);
     document.querySelector('.carrossel').appendChild(dots);
 
 
     // MONTA A LISTA DE ITENS DO CARROSSEL
     itens.forEach(function(item){
         document.querySelector('.carrossel__stage').innerHTML += `<li style="width:${itensSpecs.width}vw">
-            <div class="img>
+            <div class="img">
                 <a href="${item.link}">
                     <img src="${item.image}" alt="${item.maintitle}">
                 </a>
@@ -71,15 +71,15 @@ function carrrossel () {
                 <span class="category">
                     ${item.category}
                 </span>
-                <p class="thinline">
+                <p class="type">
                     ${item.thinline}
                 </p>
-                <a href="${item.link}">
-                    <h3>${item.maintitle}</h3>
-                </a>
-                <a href="${item.link}">
-                    <p>${item.text}</p>
-                </a>
+                <h3>
+                    <a href="${item.link}">
+                        ${item.maintitle}
+                    </a>
+                </h3>
+                <p class="maintext">${item.text}</p>
             </div>
         </li>`;
 
